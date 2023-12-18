@@ -1,8 +1,19 @@
-const elementos = [
-    {tag: 'p', texto: 'Frase 1'},
-    {tag: 'div', texto: 'Frase 2'},
-    {tag: 'section', texto: 'Frase 3'},
-    {tag: 'footer', texto: 'Frase 4'},
-];
+function mostraHora () {
+    let data = new Date();
 
+    return data.toLocaleTimeString('pt-BR', {
+        hour12: false
+    });
+}
 
+const timer = setInterval(function(){
+    console.log(mostraHora());
+}, 1000);
+
+setTimeout(function(){
+    clearInterval(timer);
+}, 6000);
+
+setTimeout(function(){
+    console.log(`O timer parou às ${mostraHora()}`)
+}, 10000);

@@ -1,19 +1,12 @@
-function mostraHora () {
-    let data = new Date();
+//função construtora e fábrica retorna objetos
+//Construtora -> Sempre inciar com letra maiúscula
 
-    return data.toLocaleTimeString('pt-BR', {
-        hour12: false
-    });
+function Pessoa (nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome; 
 }
 
-const timer = setInterval(function(){
-    console.log(mostraHora());
-}, 1000);
+const p1 = new Pessoa ('Fabio', 'Henrique');
+const p2 = new Pessoa ('Lucas', 'Oliveira');
 
-setTimeout(function(){
-    clearInterval(timer);
-}, 6000);
-
-setTimeout(function(){
-    console.log(`O timer parou às ${mostraHora()}`)
-}, 10000);
+console.log(p1,p2);
